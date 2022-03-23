@@ -1,0 +1,66 @@
+  const [count, setCount] = useState(0)
+    const [clickValue, setClickValue] = useState(1)
+    const [price, setPrice] = useState(10)
+
+
+    const [noobCounter, setNoobCounter] = useState(0)
+    const [noobPrice, setNoobPrice] = useState(500)
+
+    const plus = () => {
+        setCount(count+clickValue)
+    }
+
+    const upValue = () => {
+        if (count >= price){
+            setClickValue(clickValue+1)
+            setCount(count - price)
+            setPrice(Math.round(price*1.7))
+            console.log(price)
+        }  
+    }
+
+    const getNoob = () => {
+        console.log('Noob added')
+    }
+
+    const stylesBtn = "btn btn-warning m-2 p-3"
+  
+  
+  
+  
+  
+   <div className='info m-4'>
+            <h1>У тебя {count} монет</h1>
+            <p>Income {0} per/sec</p>
+        </div>
+
+        <div className="cliker">
+            <button type="button" className="btn btn-primary m-2"
+                onClick={plus}>
+                <h3>Click me</h3>
+                <p>{clickValue} per/click</p>
+            </button>
+        </div>
+    
+        <div className='upgrades'>
+
+             <div className='card-click'>
+                <button type="button" className={stylesBtn} 
+                        onClick={upValue}>
+                    Увеличить клик за {price} монет
+                </button>
+            </div>            
+       
+            <div className='card-noob'>
+            <button type="button" className={stylesBtn}
+                onClick={getNoob}>
+                Купить нуба за {noobPrice} монет
+            </button>
+        </div>
+     
+        <button type="button" className={stylesBtn}>Купить помощника за {0} монет</button>
+        <button type="button" className={stylesBtn}>Купить умеющего за {0} монет</button>
+        <button type="button" className={stylesBtn}>Купить опытного за {0} монет</button>
+        
+        
+        </div>
